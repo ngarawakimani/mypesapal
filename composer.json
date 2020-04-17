@@ -1,5 +1,5 @@
 {
-    "name": "jchegenye/mypesapal",
+    "name": "ngarawakimani/mypesapal",
     "description": "A simplified PesaPal integration for your Laravel App.",
     "license": "MIT",
     "authors": [
@@ -8,6 +8,10 @@
             "email": "chegenyejackson@gmail.com",
             "homepage": "https://jchegenye.me",
             "role": "Software Developer"
+        },
+        {
+            "name": "Dancan Kimani",
+            "email": "dancankimani70@gmail.com"
         }
     ],
     "homepage": "https://github.com/jchegenye/mypesapal",
@@ -31,7 +35,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Jchegenye\\MyPesaPal\\MyPesaPalServiceProvider"
+                "Ngarawakimani\\MyPesaPal\\MyPesaPalServiceProvider"
             ]
         }
     }
