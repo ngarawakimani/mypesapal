@@ -34,26 +34,21 @@ use Illuminate\Http\Request;
 
             //Construct the post_xml variable - The format is standard so no editing is required. Encode the variable using htmlentities.
             $selectedFields = Config::get('pesapal.fields');
-            
+
             $globalXML = '';
-            foreach ($formData as $data) {
-                
-                foreach($data as $key => $value){
+            foreach ($formData as $key => $value) {
 
-                    if (array_key_exists($key, $selectedFields)) {
-                        if (count($selectedFields) > 1) {
+                if (array_key_exists($key, $selectedFields)) {
+                    if (count($selectedFields) > 1) {
+                        $globalXML .= preg_replace('/\s+/', '', str_replace('_', ' ', ucwords($key)))."="."\"".$value."\" ";
 
-                            $globalXML .= preg_replace('/\s+/', '', str_replace('_', ' ', ucwords($key)))."="."\"".$value."\" ";
-                           
-                        } 
                     }
-
                 }
 
             }
 
             $callback_url = Config::get('pesapal.callback_url'); //redirect url, the page that will handle the response from pesapal.
-            
+
             $post_xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?><PesapalDirectOrderInfo xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" $globalXML xmlns=\"http://www.pesapal.com\" />";
             $post_xml = htmlentities($post_xml);
             //echo '<pre>' . var_export($post_xml, true) . '</pre>';
@@ -79,4 +74,3 @@ use Illuminate\Http\Request;
         }
 
     }
-    
