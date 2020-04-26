@@ -36,7 +36,7 @@ use Illuminate\Http\Request;
             $selectedFields = Config::get('pesapal.fields');
             
             $globalXML = '';
-            foreach ((array)$formData->request as $data) {
+            foreach ($formData as $data) {
                 
                 foreach($data as $key => $value){
 
