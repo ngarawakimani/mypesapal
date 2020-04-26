@@ -63,13 +63,7 @@ use Illuminate\Http\Request;
             $iframe_src->sign_request($signature_method, $consumer, $token);
             //echo '<pre>' . var_export($iframe_src, true) . '</pre>';
 
-            ?>
-
-            <iframe src="<?php echo $iframe_src;?>" width="100%" height="700px"  scrolling="no" frameBorder="0">
-                <p>Browser unable to load iFrame</p>
-            </iframe>
-
-            <?php
+            return $iframe_src;
 
         }
 
