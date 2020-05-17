@@ -5,7 +5,7 @@ return [
     | Application Environment
     |--------------------------------------------------------------------------
     |
-    | Pesapal will utilize this option to determine which 
+    | Pesapal will utilize this option to determine which
     | mode your App is running, either Sandbox or Live
     |
     | Local - Means your App is running on a Sandbox Mode.
@@ -17,28 +17,28 @@ return [
     |--------------------------------------------------------------------------
     | Authentication / Configuration
     |--------------------------------------------------------------------------
-    | 
+    |
     | NOTE:
     | ---------
-    | PesaPal Sandbox is at http://demo.pesapal.com. Use this to test your 
-    | developement and when you are ready to go live change to 
+    | PesaPal Sandbox is at http://demo.pesapal.com. Use this to test your
+    | developement and when you are ready to go live change to
     | https://www.pesapal.com.
     |
     | WHAT TO DO:
     | ---------
-    | Register a merchant account on https://demo.pesapal.com and use the 
+    | Register a merchant account on https://demo.pesapal.com and use the
     | 'merchant key' for testing.
-    | 
-    | Use the 'consumer secret' from your test account on 
+    |
+    | Use the 'consumer secret' from your test account on
     | https://demo.pesapal.com
-    | 
-    | Change 'iframelink' to //https://www.pesapal.com/API/PostPesapalDirectOrderV4 
-    | when you are ready to go live! 
-    | 
-    | *** THIS PACKAGE WILL DO ABOVE FOR YOU, JUST CHANGE YOUR APP_ENV TO 
+    |
+    | Change 'iframelink' to //https://www.pesapal.com/API/PostPesapalDirectOrderV4
+    | when you are ready to go live!
+    |
+    | *** THIS PACKAGE WILL DO ABOVE FOR YOU, JUST CHANGE YOUR APP_ENV TO
     | PRODUCTION OR LOCAL ***
     |
-    | When you are ready to go live make sure you change the 'consumer key' 
+    | When you are ready to go live make sure you change the 'consumer key'
     | & 'consumer secret' to the live account registered on https://pesapal.com
     |
     */
@@ -47,16 +47,18 @@ return [
         'consumer_key' => env('PESAPAL_CONSUMER_KEY', ''),
         'consumer_secret' => env('PESAPAL_CONSUMER_SECRET', ''),
         'live_iframelink' => 'https://www.pesapal.com/API/PostPesapalDirectOrderV4',
-        'demo_iframelink' => 'http://demo.pesapal.com/api/PostPesapalDirectOrderV4'
+        'demo_iframelink' => 'http://demo.pesapal.com/api/PostPesapalDirectOrderV4',
+        'live_statusrequestAPI' => 'https://demo.pesapal.com/api/querypaymentstatus',
+        'demo_statusrequestAPI' => 'https://demo.pesapal.com/api/querypaymentstatus'
     ],
     /*
     |--------------------------------------------------------------------------
     | Define the callback_url
     |--------------------------------------------------------------------------
     |
-    | This is the full url pointing to the page the iframe redirects to 
+    | This is the full url pointing to the page the iframe redirects to
     | after processing the order on pesapal.com
-    | 
+    |
     */
     'callback_url' => env('PESAPAL_CALLBACK_URL', 'http://test.com/payment-gateways-php/pesapal-php/'),
     /*
@@ -64,9 +66,9 @@ return [
     | Field Names
     |--------------------------------------------------------------------------
     |
-    | You may wish for to select prefered form details posted by your 
+    | You may wish for to select prefered form details posted by your
     | application to be used by pesapal.
-    | 
+    |
     */
     'fields' => [
         'amount' => 'number_format(PESAPAL_FIELD_AMOUNT, 2)', //format amount to 2 decimal places
